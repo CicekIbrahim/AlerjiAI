@@ -8,27 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
-        TabView {
-            ScanView()
-                .tabItem {
-                    Label("", systemImage: "viewfinder")
-                        
-                }
-                
-            
-            ProfileView()
-                .tabItem {
-                    Label("", systemImage: "person.fill")
-                        
-                }
-                
+        if viewModel.isLoggedIn {
+            HomeView()
+        } else {
+            LoginRegisterView(viewModel: viewModel)
         }
-        .accentColor(.white)
-        .onAppear() {
-              UITabBar.appearance().backgroundColor = .apple
-          }
-
         
     }
 }

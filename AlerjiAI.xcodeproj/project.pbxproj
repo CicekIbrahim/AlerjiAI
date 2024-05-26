@@ -61,6 +61,8 @@
 		4270D5C42BE7D8A100CA34C0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C32BE7D8A100CA34C0 /* AuthManager.swift */; };
 		4270D5C62BE7D97D00CA34C0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C52BE7D97D00CA34C0 /* DatabaseManager.swift */; };
 		4270D5C82BE7DD7D00CA34C0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C72BE7DD7D00CA34C0 /* BaseViewModel.swift */; };
+		42A7840F2C03D12F00BFDF88 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7840E2C03D12F00BFDF88 /* HomeView.swift */; };
+		42A784122C03D44200BFDF88 /* LocaleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A784112C03D44200BFDF88 /* LocaleStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +105,8 @@
 		4270D5C32BE7D8A100CA34C0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		4270D5C52BE7D97D00CA34C0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		4270D5C72BE7DD7D00CA34C0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		42A7840E2C03D12F00BFDF88 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		42A784112C03D44200BFDF88 /* LocaleStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 		4270D4F82BE6B61A00CA34C0 /* AlerjiAI */ = {
 			isa = PBXGroup;
 			children = (
+				42A784102C03D42D00BFDF88 /* Singletons */,
 				4270D5BF2BE7C7B100CA34C0 /* Models */,
 				4270D5B42BE7C0E800CA34C0 /* Utilities */,
 				4270D5B12BE7B84100CA34C0 /* ViewModels */,
@@ -176,6 +181,7 @@
 				4270D5072BE6BADC00CA34C0 /* ScanView.swift */,
 				4270D5092BE6BAFB00CA34C0 /* ProfileView.swift */,
 				4270D5362BE7830500CA34C0 /* LoginRegisterView.swift */,
+				42A7840E2C03D12F00BFDF88 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -256,6 +262,14 @@
 				4270D5C52BE7D97D00CA34C0 /* DatabaseManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		42A784102C03D42D00BFDF88 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				42A784112C03D44200BFDF88 /* LocaleStorage.swift */,
+			);
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +388,7 @@
 				4270D5C82BE7DD7D00CA34C0 /* BaseViewModel.swift in Sources */,
 				4270D50A2BE6BAFB00CA34C0 /* ProfileView.swift in Sources */,
 				4270D5372BE7830500CA34C0 /* LoginRegisterView.swift in Sources */,
+				42A784122C03D44200BFDF88 /* LocaleStorage.swift in Sources */,
 				4270D5632BE7956E00CA34C0 /* SecureInputView.swift in Sources */,
 				4270D5C42BE7D8A100CA34C0 /* AuthManager.swift in Sources */,
 				4270D4FC2BE6B61A00CA34C0 /* ContentView.swift in Sources */,
@@ -385,6 +400,7 @@
 				4270D5BE2BE7C14A00CA34C0 /* LocalStorage.swift in Sources */,
 				4270D5602BE78FEE00CA34C0 /* FontExt.swift in Sources */,
 				4270D5BB2BE7C11100CA34C0 /* KeychainItemAccessibility.swift in Sources */,
+				42A7840F2C03D12F00BFDF88 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginRegisterView: View {
-    @StateObject var viewModel = AuthViewModel()
+    @StateObject var viewModel: AuthViewModel
     var body: some View {
         ZStack(content: {
             BackgroundView(isRegister: $viewModel.isRegister)
@@ -46,7 +46,7 @@ struct LoginRegisterView: View {
 }
 
 #Preview {
-    LoginRegisterView()
+    LoginRegisterView(viewModel: AuthViewModel())
 }
 
 
@@ -81,7 +81,9 @@ struct RegisterView: View {
                 .frame(height: 40)
             
             Button(action: {
-                viewModel.register()
+                withAnimation {
+                    viewModel.register()
+                }
             }, label: {
                 RoundedRectangle(cornerRadius: 12)
                     .frame(height: 45)
@@ -118,12 +120,12 @@ struct LoginView: View {
     @ObservedObject var viewModel: AuthViewModel
     var body: some View {
         VStack{
-            InputView("E-Posta", text: .constant(""))
+            InputView("E-Posta", text: $viewModel.email)
             
             Spacer()
                 .frame(height: 40)
             
-            SecureInputView("Şifre", text: .constant(""))
+            SecureInputView("Şifre", text: $viewModel.password)
             
             HStack{
                 Text("Şifremi Unuttum")
@@ -141,7 +143,9 @@ struct LoginView: View {
                 .frame(height: 40)
             
             Button(action: {
-                
+                withAnimation {
+                    viewModel.login()
+                }
             }, label: {
                 RoundedRectangle(cornerRadius: 12)
                     .frame(height: 45)

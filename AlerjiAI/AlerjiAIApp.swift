@@ -21,10 +21,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct AlerjiAIApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var authViewModel = AuthViewModel()
     
     var body: some Scene {
         WindowGroup {
-            LoginRegisterView()
+            ContentView()
+                .environmentObject(authViewModel)
         }
     }
 }

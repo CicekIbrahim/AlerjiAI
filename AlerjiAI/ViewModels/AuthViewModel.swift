@@ -23,6 +23,11 @@ class AuthViewModel : BaseViewModel {
     @Published var isRegisterValid = true
     @Published var isLoginValid = true
     @Published var user = User(id: "")
+    @Published var isLoggedIn = LocalStorage.shared.isLoggedIn {
+        didSet {
+            LocalStorage.shared.isLoggedIn = isLoggedIn
+        }
+    }
 
     
     init(authService: AuthServiceProtocol = FirebaseAuthService(), databaseService: DatabaseServiceProtocol = FirestoreDatabaseService()) {
@@ -36,6 +41,19 @@ class AuthViewModel : BaseViewModel {
                 self.showError(error)
                 return
             }
+            if let userId = result?.user.uid {
+                self.databaseService.getUser(withID: userId) { user, error in
+                    if let error {
+                        self.showError(error)
+                        return
+                    }
+                    if let user {
+                        LocalStorage.shared.setUser(user: user)
+                        self.isLoggedIn = true
+                    }
+                }
+            }
+            
             
         }
     }
@@ -62,7 +80,10 @@ class AuthViewModel : BaseViewModel {
         databaseService.saveUser(user) { error in
             if let error = error {
                 self.showError(error)
+                return
             }
+            LocalStorage.shared.setUser(user: self.user)
+            self.isLoggedIn = true
         }
     }
     
