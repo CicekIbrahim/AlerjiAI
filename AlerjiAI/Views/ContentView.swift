@@ -12,6 +12,7 @@ struct ContentView: View {
     var body: some View {
         if viewModel.isLoggedIn {
             HomeView()
+                .environmentObject(viewModel)
         } else {
             LoginRegisterView(viewModel: viewModel)
         }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
     var body: some View {
         TabView {
             ScanView()
@@ -18,6 +19,7 @@ struct HomeView: View {
                 
             
             ProfileView()
+                .environmentObject(viewModel)
                 .tabItem {
                     Label("", systemImage: "person.fill")
                         

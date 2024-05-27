@@ -58,6 +58,11 @@ class AuthViewModel : BaseViewModel {
         }
     }
     
+    func logout() {
+        isLoggedIn = false
+        LocalStorage.shared.logout()
+    }
+    
     func register() -> Void {
         authService.register(email: email, password: password) { result, error in
             if let error = error {
