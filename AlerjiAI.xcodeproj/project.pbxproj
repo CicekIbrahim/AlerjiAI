@@ -61,6 +61,8 @@
 		4270D5C42BE7D8A100CA34C0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C32BE7D8A100CA34C0 /* AuthManager.swift */; };
 		4270D5C62BE7D97D00CA34C0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C52BE7D97D00CA34C0 /* DatabaseManager.swift */; };
 		4270D5C82BE7DD7D00CA34C0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C72BE7DD7D00CA34C0 /* BaseViewModel.swift */; };
+		42A210D92C07AFCD004EB949 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A210D82C07AFCD004EB949 /* CameraView.swift */; };
+		42A210DB2C07B0DF004EB949 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A210DA2C07B0DF004EB949 /* ScanViewModel.swift */; };
 		42A210EC2C07B4E2004EB949 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210EB2C07B4E2004EB949 /* FirebaseAnalytics */; };
 		42A210EE2C07B4E2004EB949 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210ED2C07B4E2004EB949 /* FirebaseAnalyticsOnDeviceConversion */; };
 		42A210F02C07B4E2004EB949 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210EF2C07B4E2004EB949 /* FirebaseAnalyticsSwift */; };
