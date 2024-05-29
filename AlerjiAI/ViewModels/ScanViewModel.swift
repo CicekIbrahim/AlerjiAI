@@ -10,7 +10,7 @@ import Alamofire
 
 class ScanViewModel: ObservableObject {
     @Published var isLoading = false
-    @Published var scannedProduct: [String: Any]? = nil
+    @Published var scannedProduct: Product? = nil
     private let databaseService = FirestoreDatabaseService()
     
 
@@ -61,7 +61,7 @@ class ScanViewModel: ObservableObject {
                 print("Ürünler veri tabanında aranırken bir sorun oluştu: \(error)")
             } else {
                 self.scannedProduct = product
-                print("Çekilen Ürün: \(self.scannedProduct ?? [:])")
+                print("Çekilen Ürün: \(self.scannedProduct?.name)")
             }
             completion()
         }

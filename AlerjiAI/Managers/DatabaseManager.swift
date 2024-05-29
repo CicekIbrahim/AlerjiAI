@@ -13,7 +13,7 @@ protocol DatabaseServiceProtocol {
     func deleteUser(withID id: String, completion: @escaping (Error?) -> Void)
     func getUser(withID id: String, completion: @escaping (User?, Error?) -> Void)
     func updateUser(_ user: User, completion: @escaping (Error?) -> Void)
-    func getProduct(withName name: String, completion: @escaping ([String: Any]?, Error?) -> Void)
+    func getProduct(withName name: String, completion: @escaping (Product?, Error?) -> Void)
 }
 
 class FirestoreDatabaseService: DatabaseServiceProtocol {
@@ -63,7 +63,7 @@ class FirestoreDatabaseService: DatabaseServiceProtocol {
         }
     }
     
-    func getProduct(withName name: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    func getProduct(withName name: String, completion: @escaping (Product?, Error?) -> Void) {
         let products = db.collection("Products")
         products.whereField("name", isEqualTo: name).getDocuments { snapshot, error in
             if let error = error {
@@ -71,10 +71,18 @@ class FirestoreDatabaseService: DatabaseServiceProtocol {
                 return
             }
             if let documents = snapshot?.documents, let document = documents.first {
-                completion(document.data(), nil)
+                do {
+                    let data = document.data()
+                    let json = try JSONSerialization.data(withJSONObject: data)
+                    let product = try JSONDecoder().decode(Product.self, from: json)
+                    completion(product, nil)
+                } catch {
+                    completion(nil, error)
+                }
             } else {
                 completion(nil, nil)
             }
         }
     }
 }
+

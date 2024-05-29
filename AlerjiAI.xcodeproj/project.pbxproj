@@ -70,7 +70,6 @@
 		42A210F42C07B4E2004EB949 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210F32C07B4E2004EB949 /* FirebaseAppCheck */; };
 		42A210F62C07B4E2004EB949 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210F52C07B4E2004EB949 /* FirebaseAppDistribution-Beta */; };
 		42A210F92C07B5D1004EB949 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210F82C07B5D1004EB949 /* Alamofire */; };
-		42A210FB2C07B5D1004EB949 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210FA2C07B5D1004EB949 /* AlamofireDynamic */; };
 		42A7840F2C03D12F00BFDF88 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7840E2C03D12F00BFDF88 /* HomeView.swift */; };
 		42A784122C03D44200BFDF88 /* LocaleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A784112C03D44200BFDF88 /* LocaleStorage.swift */; };
 		42A784142C0441B200BFDF88 /* ScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A784132C0441B200BFDF88 /* ScanModel.swift */; };
@@ -139,7 +138,6 @@
 				42A210F62C07B4E2004EB949 /* FirebaseAppDistribution-Beta in Frameworks */,
 				42A210F22C07B4E2004EB949 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				42A210F02C07B4E2004EB949 /* FirebaseAnalyticsSwift in Frameworks */,
-				42A210FB2C07B5D1004EB949 /* AlamofireDynamic in Frameworks */,
 				4270D5112BE77DA700CA34C0 /* FirebaseAuth in Frameworks */,
 				4270D52F2BE77DA700CA34C0 /* FirebaseStorage in Frameworks */,
 				42A210F92C07B5D1004EB949 /* Alamofire in Frameworks */,
@@ -344,7 +342,6 @@
 				42A210F32C07B4E2004EB949 /* FirebaseAppCheck */,
 				42A210F52C07B4E2004EB949 /* FirebaseAppDistribution-Beta */,
 				42A210F82C07B5D1004EB949 /* Alamofire */,
-				42A210FA2C07B5D1004EB949 /* AlamofireDynamic */,
 			);
 			productName = AlerjiAI;
 			productReference = 4270D4F62BE6B61A00CA34C0 /* AlerjiAI.app */;
@@ -791,11 +788,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 42A210F72C07B5D1004EB949 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		42A210FA2C07B5D1004EB949 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 42A210F72C07B5D1004EB949 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
