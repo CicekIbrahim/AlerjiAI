@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ScanView: View {
+    @StateObject private var viewModel = ScanViewModel()
+    @State private var isCameraViewPresented = false
     var body: some View {
         VStack {
             Spacer()
@@ -27,7 +29,7 @@ struct ScanView: View {
             Spacer().frame(height: 50)
             
             Button(action: {
-                
+                isCameraViewPresented = true
             }, label: {
                 Image(systemName: "viewfinder")
                     .resizable()
@@ -39,7 +41,7 @@ struct ScanView: View {
                         RoundedRectangle(cornerRadius: 14)
                             .foregroundStyle(Color.mercury)
                     )
-                    
+                
             })
             
             Spacer()
@@ -70,6 +72,9 @@ struct ScanView: View {
             Spacer()
         }
         .padding(.horizontal, 20)
+        .sheet(isPresented: $isCameraViewPresented) {
+                        CameraView(viewModel: viewModel)
+                    }
     }
 }
 

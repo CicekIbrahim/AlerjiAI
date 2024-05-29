@@ -61,6 +61,14 @@
 		4270D5C42BE7D8A100CA34C0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C32BE7D8A100CA34C0 /* AuthManager.swift */; };
 		4270D5C62BE7D97D00CA34C0 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C52BE7D97D00CA34C0 /* DatabaseManager.swift */; };
 		4270D5C82BE7DD7D00CA34C0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D5C72BE7DD7D00CA34C0 /* BaseViewModel.swift */; };
+		42A210EC2C07B4E2004EB949 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210EB2C07B4E2004EB949 /* FirebaseAnalytics */; };
+		42A210EE2C07B4E2004EB949 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210ED2C07B4E2004EB949 /* FirebaseAnalyticsOnDeviceConversion */; };
+		42A210F02C07B4E2004EB949 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210EF2C07B4E2004EB949 /* FirebaseAnalyticsSwift */; };
+		42A210F22C07B4E2004EB949 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210F12C07B4E2004EB949 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		42A210F42C07B4E2004EB949 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210F32C07B4E2004EB949 /* FirebaseAppCheck */; };
+		42A210F62C07B4E2004EB949 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210F52C07B4E2004EB949 /* FirebaseAppDistribution-Beta */; };
+		42A210F92C07B5D1004EB949 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210F82C07B5D1004EB949 /* Alamofire */; };
+		42A210FB2C07B5D1004EB949 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 42A210FA2C07B5D1004EB949 /* AlamofireDynamic */; };
 		42A7840F2C03D12F00BFDF88 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A7840E2C03D12F00BFDF88 /* HomeView.swift */; };
 		42A784122C03D44200BFDF88 /* LocaleStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A784112C03D44200BFDF88 /* LocaleStorage.swift */; };
 		42A784142C0441B200BFDF88 /* ScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A784132C0441B200BFDF88 /* ScanModel.swift */; };
@@ -108,6 +116,8 @@
 		4270D5C32BE7D8A100CA34C0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		4270D5C52BE7D97D00CA34C0 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		4270D5C72BE7DD7D00CA34C0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		42A210D82C07AFCD004EB949 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		42A210DA2C07B0DF004EB949 /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		42A7840E2C03D12F00BFDF88 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		42A784112C03D44200BFDF88 /* LocaleStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleStorage.swift; sourceTree = "<group>"; };
 		42A784132C0441B200BFDF88 /* ScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModel.swift; sourceTree = "<group>"; };
@@ -124,14 +134,22 @@
 				4270D51F2BE77DA700CA34C0 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				4270D5152BE77DA700CA34C0 /* FirebaseCrashlytics in Frameworks */,
 				4270D52B2BE77DA700CA34C0 /* FirebaseRemoteConfig in Frameworks */,
+				42A210F62C07B4E2004EB949 /* FirebaseAppDistribution-Beta in Frameworks */,
+				42A210F22C07B4E2004EB949 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				42A210F02C07B4E2004EB949 /* FirebaseAnalyticsSwift in Frameworks */,
+				42A210FB2C07B5D1004EB949 /* AlamofireDynamic in Frameworks */,
 				4270D5112BE77DA700CA34C0 /* FirebaseAuth in Frameworks */,
 				4270D52F2BE77DA700CA34C0 /* FirebaseStorage in Frameworks */,
+				42A210F92C07B5D1004EB949 /* Alamofire in Frameworks */,
 				4270D5312BE77DA700CA34C0 /* FirebaseStorageCombine-Community in Frameworks */,
 				4270D5172BE77DA700CA34C0 /* FirebaseDatabase in Frameworks */,
+				42A210F42C07B4E2004EB949 /* FirebaseAppCheck in Frameworks */,
+				42A210EC2C07B4E2004EB949 /* FirebaseAnalytics in Frameworks */,
 				4270D5132BE77DA700CA34C0 /* FirebaseAuthCombine-Community in Frameworks */,
 				4270D5252BE77DA700CA34C0 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				4270D51B2BE77DA700CA34C0 /* FirebaseDynamicLinks in Frameworks */,
 				4270D5232BE77DA700CA34C0 /* FirebaseFunctions in Frameworks */,
+				42A210EE2C07B4E2004EB949 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				4270D51D2BE77DA700CA34C0 /* FirebaseFirestore in Frameworks */,
 				4270D5272BE77DA700CA34C0 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				4270D52D2BE77DA700CA34C0 /* FirebaseRemoteConfigSwift in Frameworks */,
@@ -188,6 +206,7 @@
 				4270D5092BE6BAFB00CA34C0 /* ProfileView.swift */,
 				4270D5362BE7830500CA34C0 /* LoginRegisterView.swift */,
 				42A7840E2C03D12F00BFDF88 /* HomeView.swift */,
+				42A210D82C07AFCD004EB949 /* CameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,6 +259,7 @@
 				4270D5B22BE7B86600CA34C0 /* AuthViewModel.swift */,
 				4270D5C72BE7DD7D00CA34C0 /* BaseViewModel.swift */,
 				42A784172C04542B00BFDF88 /* UserViewModel.swift */,
+				42A210DA2C07B0DF004EB949 /* ScanViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -315,6 +335,14 @@
 				4270D52C2BE77DA700CA34C0 /* FirebaseRemoteConfigSwift */,
 				4270D52E2BE77DA700CA34C0 /* FirebaseStorage */,
 				4270D5302BE77DA700CA34C0 /* FirebaseStorageCombine-Community */,
+				42A210EB2C07B4E2004EB949 /* FirebaseAnalytics */,
+				42A210ED2C07B4E2004EB949 /* FirebaseAnalyticsOnDeviceConversion */,
+				42A210EF2C07B4E2004EB949 /* FirebaseAnalyticsSwift */,
+				42A210F12C07B4E2004EB949 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				42A210F32C07B4E2004EB949 /* FirebaseAppCheck */,
+				42A210F52C07B4E2004EB949 /* FirebaseAppDistribution-Beta */,
+				42A210F82C07B5D1004EB949 /* Alamofire */,
+				42A210FA2C07B5D1004EB949 /* AlamofireDynamic */,
 			);
 			productName = AlerjiAI;
 			productReference = 4270D4F62BE6B61A00CA34C0 /* AlerjiAI.app */;
@@ -346,6 +374,7 @@
 			mainGroup = 4270D4ED2BE6B61A00CA34C0;
 			packageReferences = (
 				4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				42A210F72C07B5D1004EB949 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 4270D4F72BE6B61A00CA34C0 /* Products */;
 			projectDirPath = "";
@@ -396,9 +425,11 @@
 				4270D5C62BE7D97D00CA34C0 /* DatabaseManager.swift in Sources */,
 				4270D5B32BE7B86600CA34C0 /* AuthViewModel.swift in Sources */,
 				4270D5C82BE7DD7D00CA34C0 /* BaseViewModel.swift in Sources */,
+				42A210DB2C07B0DF004EB949 /* ScanViewModel.swift in Sources */,
 				4270D50A2BE6BAFB00CA34C0 /* ProfileView.swift in Sources */,
 				4270D5372BE7830500CA34C0 /* LoginRegisterView.swift in Sources */,
 				42A784122C03D44200BFDF88 /* LocaleStorage.swift in Sources */,
+				42A210D92C07AFCD004EB949 /* CameraView.swift in Sources */,
 				4270D5632BE7956E00CA34C0 /* SecureInputView.swift in Sources */,
 				4270D5C42BE7D8A100CA34C0 /* AuthManager.swift in Sources */,
 				4270D4FC2BE6B61A00CA34C0 /* ContentView.swift in Sources */,
@@ -628,6 +659,14 @@
 				minimumVersion = 10.25.0;
 			};
 		};
+		42A210F72C07B5D1004EB949 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -715,6 +754,46 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		42A210EB2C07B4E2004EB949 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		42A210ED2C07B4E2004EB949 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		42A210EF2C07B4E2004EB949 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		42A210F12C07B4E2004EB949 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		42A210F32C07B4E2004EB949 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		42A210F52C07B4E2004EB949 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4270D50F2BE77DA700CA34C0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		42A210F82C07B5D1004EB949 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42A210F72C07B5D1004EB949 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		42A210FA2C07B5D1004EB949 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42A210F72C07B5D1004EB949 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

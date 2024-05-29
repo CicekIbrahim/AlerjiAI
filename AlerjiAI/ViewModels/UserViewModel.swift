@@ -33,11 +33,12 @@ class UserViewModel: BaseViewModel {
         "Kivi",
         "Zencefil"
     ]
+
     
     @Published var user: User? = LocalStorage.shared.getUser()
     @Published var userAllergens: [String] = [] {
         didSet {
-            user?.allergies = userAllergens
+            
             updateUserAllergens()
         }
     }
@@ -50,7 +51,8 @@ class UserViewModel: BaseViewModel {
     }
     
     func updateUserAllergens() {
-        if let user{
+        if var user{
+            user.allergies = userAllergens
             databaseService.updateUser(user) { error in
                 if let error {
                     self.showError(error)
@@ -59,5 +61,14 @@ class UserViewModel: BaseViewModel {
             }
         }
     }
+    
+
+    
+   
+
+
+    
+
+    
 }
 
