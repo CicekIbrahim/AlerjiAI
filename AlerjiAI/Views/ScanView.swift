@@ -10,71 +10,111 @@ import SwiftUI
 struct ScanView: View {
     @StateObject private var viewModel = ScanViewModel()
     @State private var isCameraViewPresented = false
+    @State private var isScanSheetPresented = false
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     var body: some View {
-        VStack {
-            Spacer()
-                .frame(height: 30)
-            Image("logoApp")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200)
-            
-            Spacer()
-                .frame(height: 30)
-            
-            Text("Hızlıca tarat, Güvenle Tüket")
-                .font(.poppins(.regular, size: 15))
-                .foregroundStyle(Color.tundora)
-            
-            Spacer().frame(height: 50)
-            
-            Button(action: {
-                isCameraViewPresented = true
-            }, label: {
-                Image(systemName: "viewfinder")
+        ZStack{
+            VStack {
+                Spacer()
+                    .frame(height: 30)
+                Image("logoApp")
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 58)
-                    .tint(.doveGray)
-                    .padding(.all, 20)
-                    .background(
-                        RoundedRectangle(cornerRadius: 14)
-                            .foregroundStyle(Color.mercury)
-                    )
+                    .frame(width: 200)
                 
-            })
-            
-            Spacer()
-                .frame(height: 30)
-            
-            Text("Taratmak için lütfen butona basınız")
-                .font(.poppins(.regular, size: 15))
-                .foregroundStyle(Color.tundora)
-            
-            Spacer()
-                .frame(height: 100)
-            HStack{
-                Image(systemName: "clock.arrow.circlepath")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 20)
-                    .foregroundStyle(Color.tundora)
+                Spacer()
+                    .frame(height: 30)
                 
-                Text("Geçmiş Taramalar")
+                Text("Hızlıca tarat, Güvenle Tüket")
                     .font(.poppins(.regular, size: 15))
                     .foregroundStyle(Color.tundora)
                 
+                Spacer().frame(height: 50)
+                
+                
+                
+                Button(action: {
+                    isCameraViewPresented = true
+                }, label: {
+                    Image(systemName: "viewfinder")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 58)
+                        .tint(.doveGray)
+                        .padding(.all, 20)
+                        .background(
+                            RoundedRectangle(cornerRadius: 14)
+                                .foregroundStyle(Color.mercury)
+                        )
+                    
+                })
+                
+                
+                
+                Spacer()
+                    .frame(height: 30)
+                
+                Text("Taratmak için lütfen butona basınız")
+                    .font(.poppins(.regular, size: 15))
+                    .foregroundStyle(Color.tundora)
+                
+                Spacer()
+                    .frame(height: 100)
+                HStack{
+                    Image(systemName: "clock.arrow.circlepath")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 20)
+                        .foregroundStyle(Color.tundora)
+                    
+                    Text("Geçmiş Taramalar")
+                        .font(.poppins(.regular, size: 15))
+                        .foregroundStyle(Color.tundora)
+                    
+                }
+                
+                ScrollView {
+                    ForEach(viewModel.lastScans?.prefix(3) ?? []) { scan in
+                        ScanItemViev(scan: scan)
+                            .onTapGesture {
+                                viewModel.scanResult = scan
+                                isScanSheetPresented = true
+                            }
+                    }
+                }
+                
+                
+                
+                
+                Spacer()
+            }
+            .padding(.horizontal, 20)
+            
+            if (isScanSheetPresented || viewModel.isLoading) {
+                Color.black.opacity(0.58)
+                    .ignoresSafeArea(.all)
             }
             
-            
-            
-            
-            Spacer()
+            if (viewModel.isLoading) {
+                CustomLoadingAnimation()
+            }
         }
-        .padding(.horizontal, 20)
         .sheet(isPresented: $isCameraViewPresented) {
-                        CameraView(viewModel: viewModel)
-                    }
+            CameraView(isPresented: $isCameraViewPresented, viewModel: viewModel)
+        }
+        .sheet(isPresented: $isScanSheetPresented, content: {
+            if let scanResult = viewModel.scanResult{
+                ScanSheetView(scan: scanResult, isPresented: $isScanSheetPresented)
+                    .presentationDetents([.fraction(0.7)])
+                    .presentationCornerRadius(16)
+            }
+        })
+        .onReceive(viewModel.$scanResult) { scan in
+            if scan != nil {
+                isScanSheetPresented = true
+            }
+        }
     }
 }
 

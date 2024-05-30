@@ -8,11 +8,18 @@
 import SwiftUI
 import Alamofire
 
-class ScanViewModel: ObservableObject {
+class ScanViewModel: BaseViewModel {
     @Published var isLoading = false
     @Published var scannedProduct: Product? = nil
     private let databaseService = FirestoreDatabaseService()
+    @Published var user = LocalStorage.shared.getUser()
+    @Published var scanResult: Scan? = nil
+    @Published var lastScans: [Scan]? = []
     
+    override init() {
+        super.init()
+        getScans()
+    }
 
     
     func uploadImage(_ image: UIImage) {
@@ -32,8 +39,19 @@ class ScanViewModel: ObservableObject {
             case .success(let value):
                 if let json = value as? [String: Any], let responseString = json["response"] as? String {
                     let formattedResponse = self.formatResponse(responseString)
-                    self.fetchProduct(named: formattedResponse) {
-                        self.isLoading = false
+                    self.fetchProduct(named: formattedResponse) { product in
+                        self.checkAllergens(in: product) {
+                            self.isLoading = false
+                            if let scan = self.scanResult {
+                                self.databaseService.saveScan(scan) { error in
+                                    if let error {
+                                        self.showError(error)
+                                        return
+                                    }
+                                    self.lastScans?.append(scan)
+                                }
+                            }
+                        }
                     }
                 }
             case .failure(let error):
@@ -55,15 +73,55 @@ class ScanViewModel: ObservableObject {
             .replacingOccurrences(of: "ç", with: "c")
     }
     
-    func fetchProduct(named name: String, completion: @escaping () -> Void) {
+    func fetchProduct(named name: String, completion: @escaping (Product) -> Void) {
         databaseService.getProduct(withName: name) { product, error in
             if let error = error {
-                print("Ürünler veri tabanında aranırken bir sorun oluştu: \(error)")
+                self.showError(error)
             } else {
                 self.scannedProduct = product
-                print("Çekilen Ürün: \(self.scannedProduct?.name)")
+                if let product {
+                    completion(product)
+                }
             }
-            completion()
+            
         }
     }
+    
+    private func checkAllergens(in product: Product, completion: @escaping () -> Void) {
+           if let user {
+               var coughtAllergens: [String] = []
+               
+               if let ingredients = product.ingredients {
+                   for ingredient in ingredients {
+                       for allergen in user.allergies ?? [] {
+                           if ingredient.localizedCaseInsensitiveContains(allergen) {
+                               coughtAllergens.append(ingredient)
+                           }
+                       }
+                   }
+               }
+               
+               let isAllergic = !coughtAllergens.isEmpty
+               let scan = Scan(
+                   product: product,
+                   coughtAllergens: coughtAllergens,
+                   isAllergic: isAllergic,
+                   userId: user.id
+               )
+               
+               self.scanResult = scan
+               completion()
+           }
+       }
+    
+    func getScans() {
+        self.databaseService.getAllScans(for: self.user?.id ?? "") { scans, error in
+            if let error {
+                self.showError(error)
+                return
+            }
+            self.lastScans = scans
+        }
+    }
+    
 }

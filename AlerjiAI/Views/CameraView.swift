@@ -2,76 +2,22 @@ import SwiftUI
 import AVFoundation
 import Photos
 
-struct CameraView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel: ScanViewModel
-    @State private var isImagePickerPresented = false
-    
-    var body: some View {
-        ZStack {
-            if viewModel.isLoading {
-                Color.black.opacity(0.4).ignoresSafeArea()
-                ProgressView("Yükleniyor...").progressViewStyle(CircularProgressViewStyle(tint: .white))
-            }
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(.black)
-                            .padding()
-                    }
-                }
-                Spacer()
-                Button(action: {
-                    isImagePickerPresented = true
-                }) {
-                    Text("Fotoğraf Çek")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
-                Spacer()
-            }
-        }
-        .sheet(isPresented: $isImagePickerPresented, onDismiss: handleImagePickerDismiss) {
-            ImagePickerView(isPresented: $isImagePickerPresented, onImagePicked: handleImagePicked)
-        }
-    }
-    
-    func handleImagePicked(image: UIImage) {
-        viewModel.uploadImage(image)
-        presentationMode.wrappedValue.dismiss()
-    }
-    
-    func handleImagePickerDismiss() {
-        // Handle image picker dismiss
-    }
-}
-
-struct ImagePickerView: UIViewControllerRepresentable {
+struct CameraView: UIViewControllerRepresentable {
     @Binding var isPresented: Bool
-    var onImagePicked: (UIImage) -> Void
+    @ObservedObject var viewModel: ScanViewModel
     
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         @Binding var isPresented: Bool
-        var onImagePicked: (UIImage) -> Void
+        var viewModel: ScanViewModel
         
-        init(isPresented: Binding<Bool>, onImagePicked: @escaping (UIImage) -> Void) {
+        init(isPresented: Binding<Bool>, viewModel: ScanViewModel) {
             _isPresented = isPresented
-            self.onImagePicked = onImagePicked
+            self.viewModel = viewModel
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
-                onImagePicked(image)
+                viewModel.uploadImage(image)
             }
             isPresented = false
         }
@@ -82,7 +28,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(isPresented: $isPresented, onImagePicked: onImagePicked)
+        return Coordinator(isPresented: $isPresented, viewModel: viewModel)
     }
     
     func makeUIViewController(context: Context) -> UIImagePickerController {
