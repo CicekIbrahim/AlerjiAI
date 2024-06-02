@@ -100,6 +100,12 @@ struct ScanView: View {
                 CustomLoadingAnimation()
             }
         }
+        .alert(isPresented: $viewModel.showError) {
+                Alert(
+                    title: Text("Hata"),
+                    message: Text(viewModel.errorMessage)
+                )
+            }
         .sheet(isPresented: $isCameraViewPresented) {
             CameraView(isPresented: $isCameraViewPresented, viewModel: viewModel)
         }

@@ -9,9 +9,13 @@ import SwiftUI
 
 struct LoginRegisterView: View {
     @StateObject var viewModel: AuthViewModel
+   
     var body: some View {
         ZStack(content: {
             BackgroundView(isRegister: $viewModel.isRegister)
+                .onTapGesture {
+                    hideKeyboard()
+                }
             
             VStack {
                 Spacer()
@@ -21,6 +25,9 @@ struct LoginRegisterView: View {
                     .scaledToFit()
                     .frame(height: 100)
                     .padding(.trailing, 10)
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
                 
                 Spacer()
                     .frame(height: 10)
@@ -41,7 +48,23 @@ struct LoginRegisterView: View {
                 Spacer()
             }
             .padding(.horizontal, 40)
-        })
+            .alert(isPresented: $viewModel.showError) {
+                    Alert(
+                        title: Text("Hata"),
+                        message: Text(viewModel.errorMessage)
+                    )
+                }
+            .sheet(isPresented: $viewModel.isPasswordForgot) {
+                ForgotPasswordView(viewModel: viewModel)
+            }
+            if (viewModel.isLoading && !viewModel.isPasswordForgot) {
+                Color.black.opacity(0.58)
+                    .ignoresSafeArea(.all)
+                
+                CustomLoadingAnimation()
+            }
+        }
+        )
     }
 }
 
@@ -82,6 +105,7 @@ struct RegisterView: View {
             
             Button(action: {
                 withAnimation {
+                    hideKeyboard()
                     viewModel.register()
                 }
             }, label: {
@@ -128,13 +152,15 @@ struct LoginView: View {
             SecureInputView("Şifre", text: $viewModel.password)
             
             HStack{
-                Text("Şifremi Unuttum")
-                    .font(.poppins(.light, size: 12))
-                    .foregroundStyle(.tundora.opacity(0.7))
-                    .padding([.top,.leading], 4)
-                    .onTapGesture {
-                        
-                    }
+                Button(action: {
+                    viewModel.isPasswordForgot = true
+                }, label: {
+                    Text("Şifremi Unuttum")
+                        .font(.poppins(.light, size: 12))
+                        .foregroundStyle(.tundora.opacity(0.7))
+                        .padding([.top,.leading], 4)
+                })
+                    
                 
                 Spacer()
             }
@@ -144,6 +170,7 @@ struct LoginView: View {
             
             Button(action: {
                 withAnimation {
+                    hideKeyboard()
                     viewModel.login()
                 }
             }, label: {

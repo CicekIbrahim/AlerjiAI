@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426B6B102C0C6C5C001AD324 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B6B0F2C0C6C5C001AD324 /* ViewExt.swift */; };
+		426B6B122C0C6FD1001AD324 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B6B112C0C6FD1001AD324 /* ForgotPasswordView.swift */; };
 		4270D4FA2BE6B61A00CA34C0 /* AlerjiAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D4F92BE6B61A00CA34C0 /* AlerjiAIApp.swift */; };
 		4270D4FC2BE6B61A00CA34C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D4FB2BE6B61A00CA34C0 /* ContentView.swift */; };
 		4270D4FE2BE6B61C00CA34C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4270D4FD2BE6B61C00CA34C0 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		426B6B0F2C0C6C5C001AD324 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		426B6B112C0C6FD1001AD324 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		4270D4F62BE6B61A00CA34C0 /* AlerjiAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlerjiAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4270D4F92BE6B61A00CA34C0 /* AlerjiAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlerjiAIApp.swift; sourceTree = "<group>"; };
 		4270D4FB2BE6B61A00CA34C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				4270D5362BE7830500CA34C0 /* LoginRegisterView.swift */,
 				42A7840E2C03D12F00BFDF88 /* HomeView.swift */,
 				42A210D82C07AFCD004EB949 /* CameraView.swift */,
+				426B6B112C0C6FD1001AD324 /* ForgotPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			children = (
 				4270D55F2BE78FEE00CA34C0 /* FontExt.swift */,
 				42BE39AC2C08A82100BD959A /* StringExt.swift */,
+				426B6B0F2C0C6C5C001AD324 /* ViewExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -445,11 +451,13 @@
 				4270D4FA2BE6B61A00CA34C0 /* AlerjiAIApp.swift in Sources */,
 				4270D5652BE7958900CA34C0 /* InputView.swift in Sources */,
 				4270D5C12BE7C7BA00CA34C0 /* UserModel.swift in Sources */,
+				426B6B102C0C6C5C001AD324 /* ViewExt.swift in Sources */,
 				4270D5082BE6BADC00CA34C0 /* ScanView.swift in Sources */,
 				4270D5BC2BE7C11100CA34C0 /* KeychainWrapper.swift in Sources */,
 				4270D5BE2BE7C14A00CA34C0 /* LocalStorage.swift in Sources */,
 				4270D5602BE78FEE00CA34C0 /* FontExt.swift in Sources */,
 				42BE39AD2C08A82100BD959A /* StringExt.swift in Sources */,
+				426B6B122C0C6FD1001AD324 /* ForgotPasswordView.swift in Sources */,
 				42A784162C04423F00BFDF88 /* Product.swift in Sources */,
 				4270D5BB2BE7C11100CA34C0 /* KeychainItemAccessibility.swift in Sources */,
 				42A784182C04542B00BFDF88 /* UserViewModel.swift in Sources */,

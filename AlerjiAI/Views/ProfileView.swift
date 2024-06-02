@@ -102,6 +102,12 @@ struct ProfileView: View {
                 .padding(.horizontal, 50)
             }
         }
+        .alert(isPresented: $viewModel.showError) {
+                Alert(
+                    title: Text("Hata"),
+                    message: Text(viewModel.errorMessage)
+                )
+            }
     }
 }
 

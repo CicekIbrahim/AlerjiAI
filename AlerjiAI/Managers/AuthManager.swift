@@ -13,8 +13,8 @@ protocol AuthServiceProtocol {
     
     func login(email: String, password: String, completion: @escaping AuthResult)
     func register(email: String, password: String, completion: @escaping AuthResult)
+    func forgotPassword(email: String, completion: @escaping (Error?) -> Void)
 }
-
 
 class FirebaseAuthService: AuthServiceProtocol {
     func login(email: String, password: String, completion: @escaping AuthResult) {
@@ -38,6 +38,12 @@ class FirebaseAuthService: AuthServiceProtocol {
             } else {
                 completion(nil, AuthError.unknownError)
             }
+        }
+    }
+    
+    func forgotPassword(email: String, completion: @escaping (Error?) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            completion(error)
         }
     }
 }

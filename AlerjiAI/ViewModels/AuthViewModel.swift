@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 class AuthViewModel : BaseViewModel {
     
@@ -23,6 +24,9 @@ class AuthViewModel : BaseViewModel {
     @Published var isRegisterValid = true
     @Published var isLoginValid = true
     @Published var user = User(id: "")
+    @Published var isLoading = false
+    @Published var isPasswordForgot = false
+    @Published var isPasswordResetSuccess = false
     @Published var isLoggedIn = LocalStorage.shared.isLoggedIn {
         didSet {
             LocalStorage.shared.isLoggedIn = isLoggedIn
@@ -36,8 +40,10 @@ class AuthViewModel : BaseViewModel {
     }
     
     func login() {
+        isLoading = true
         authService.login(email: email, password: password) { result, error in
             if let error = error {
+                self.isLoading = false
                 self.showError(error)
                 return
             }
@@ -49,6 +55,7 @@ class AuthViewModel : BaseViewModel {
                     }
                     if let user {
                         LocalStorage.shared.setUser(user: user)
+                        self.isLoading = false
                         self.isLoggedIn = true
                     }
                 }
@@ -58,14 +65,29 @@ class AuthViewModel : BaseViewModel {
         }
     }
     
+    func forgotPassword() {
+        isLoading = true
+        authService.forgotPassword(email: email) { error in
+            if let error {
+                self.isLoading = false
+                self.showError(error)
+                return
+            }
+            self.isLoading = false
+            self.isPasswordResetSuccess = true
+        }
+    }
+    
     func logout() {
         isLoggedIn = false
         LocalStorage.shared.logout()
     }
     
     func register() -> Void {
+        self.isLoading = true
         authService.register(email: email, password: password) { result, error in
             if let error = error {
+                self.isLoading = false
                 self.showError(error)
                 return
             }
@@ -84,10 +106,12 @@ class AuthViewModel : BaseViewModel {
     private func completeRegistration() {
         databaseService.saveUser(user) { error in
             if let error = error {
+                self.isLoading = false
                 self.showError(error)
                 return
             }
             LocalStorage.shared.setUser(user: self.user)
+            self.isLoading = false
             self.isLoggedIn = true
         }
     }
