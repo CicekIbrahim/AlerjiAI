@@ -1,71 +1,69 @@
-# AlerjiAi Mobil Uygulama
 
-AlerjiAi, paketli gıdalardaki alerjenlerin tespiti için yapay zeka destekli bir mobil uygulamadır. Kullanıcılar, ürünlerin fotoğrafını çekerek içerdiği alerjenleri hızlı ve güvenilir bir şekilde öğrenebilirler. Bu uygulama, alerjik bireylerin sağlıklı ve güvenli tüketim yapmalarını sağlamayı amaçlamaktadır.
+# AlerjiAi Mobile Application
 
-## Özellikler
+AlerjiAi is an AI-powered mobile application for detecting allergens in packaged foods. Users can quickly and reliably learn about the allergens contained in products by taking a photo of them. This application aims to ensure healthy and safe consumption for allergic individuals.
 
-• Hızlı ve Güvenilir Alerjen Tespiti: Kullanıcıların paketli gıdaların içeriklerini hızlı bir şekilde analiz edebilmesi ve alerjenleri güvenilir bir şekilde tespit edebilmesi sağlanır.
+## Features
 
-•	Kullanıcı Dostu Mobil Uygulama: SwiftUI ile geliştirilen kullanıcı dostu bir mobil uygulama sunulur.
+• Fast and Reliable Allergen Detection: Enables users to quickly analyze the contents of packaged foods and reliably detect allergens.
 
-•	Özel Eğitimli YOLOv9 Modeli Kullanımı: Kendi çektiğimiz ve etiketlediğimiz ürün fotoğraflarından oluşan bir veri seti ile eğitilmiş YOLOv9 modeli kullanılarak, yüksek doğruluk oranı ile alerjen tespiti yapılır.
+•	User-Friendly Mobile Application: Provides a user-friendly mobile application developed with SwiftUI.
 
-•	LLM Entegrasyonu: Modelin sonuç verememesi durumunda, bir LLM’e yapılan istek ile ek bir doğrulama ve destek sağlanarak, kullanıcıya en doğru bilgi sunulur.
+•	Custom-Trained YOLOv9 Model: Uses a YOLOv9 model trained with a dataset of product photos we captured and labeled, ensuring high accuracy in allergen detection.
 
-•	Firebase ile İçerik Sorgulama: Ürün adlarının doğru bir şekilde belirlenip, Firebase veritabanı üzerinden içerik bilgileri sorgulanarak kullanıcıya kapsamlı ve güncel bilgi sunulur.
+•	LLM Integration: In case the model cannot provide results, an additional request is made to an LLM to provide extra verification and support, offering the most accurate information to the user.
 
-•	Alerji Bilincini Artırma: Proje, alerjik bireylerin bilinçli tüketim yapmalarını destekleyerek, alerji bilincinin artmasına katkıda bulunur.
+•	Content Query with Firebase: Ensures the accurate determination of product names and queries content information from the Firebase database, providing comprehensive and up-to-date information to the user.
 
-# Kullanılan Teknolojiler
+•	Raising Allergy Awareness: The project supports conscious consumption by allergic individuals, contributing to increased allergy awareness.
 
-## Mobil Uygulama:
-• Geliştirme Ortamı: Xcode
+# Technologies Used
 
-• Programlama Dili: Swift
+## Mobile Application:
+• Development Environment: Xcode
 
-• Çerçeve: SwiftUI
+• Programming Language: Swift
+
+• Framework: SwiftUI
 
 ## Backend:
 
-• Programlama Dili: Python
+• Programming Language: Python
 
 • Framework: Flask
 
-• Araç: Ngrok
+• Tool: Ngrok
 
-• Model: YOLOv9 (Kendi çektiğimiz ve etiketlediğimiz 40 farklı ürünün fotoğraflarından oluşan veri seti ile eğitildi)
+• Model: YOLOv9 (Trained with a dataset of photos of 40 different products we captured and labeled)
 
-• Ek Model: OpenAI Language Learning Model (LLM)
+• Additional Model: OpenAI Language Learning Model (LLM)
 
-## Veritabanı ve Kimlik Doğrulama:
+## Database and Authentication:
 
 • Firebase
 
-## Etiketleme ve Model Eğitimi:
+## Labeling and Model Training:
 
-• Araç: Roboflow
- 
+• Tool: Roboflow
 
-## Kullanım
+## Usage
 
-1.  AlerjiAi Python Projesini Başlatın ve Visual Studio üzerinde 5000 portuna yöndlendirme açın.
+1. 	Start the [AlerjiAi Python Project](https://github.com/CicekIbrahim/AlerjiAi-Python) and save the link provided by `ngrok`.
 
-2.	Uygulamayı başlatın ve ürünün fotoğrafını çekin.
+2. 	Insert the link in to the `Config.xcconfig` file.
+
+3.	Start the application and take a photo of the product.
 	
-3.	Fotoğraf backend’e gönderilir ve YOLOv9 modeli tarafından analiz edilir.
+4.	The photo is sent to the backend and analyzed by the YOLOv9 model.
 	
-4.	Ürün adı belirlenir ve Firebase veritabanında sorgulanır.
+5.	The product name is determined and queried in the Firebase database.
 	
-5.	Alerjenler tespit edilir ve sonuçlar kullanıcıya gösterilir.
+6.	Allergens are detected and results are shown to the user.
 
-  
-## Ekran Görüntüleri
+## Screenshots
 
 <p float="center">
   <img src="https://res.cloudinary.com/dusexzcp5/image/upload/v1717643813/IMG_1276_ala3mt.png" width="200" height="400">
   <img src="https://res.cloudinary.com/dusexzcp5/image/upload/v1717643813/IMG_1277_kkfy4y.png" width="200" height="400">
   <img src="https://res.cloudinary.com/dusexzcp5/image/upload/v1717643813/IMG_1278_nnycma.png" width="200" height="400">
 </p>
-
-
-
