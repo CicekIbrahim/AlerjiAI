@@ -16,15 +16,34 @@ AlerjiAi, paketli gıdalardaki alerjenlerin tespiti için yapay zeka destekli bi
 
 •	Alerji Bilincini Artırma: Proje, alerjik bireylerin bilinçli tüketim yapmalarını destekleyerek, alerji bilincinin artmasına katkıda bulunur.
 
-Kullanılan Teknolojiler
+# Kullanılan Teknolojiler
 
-•	Geliştirme Ortamı: Xcode
-  
-•	Programlama Dili: Swift
- 
-•	Çerçeve: SwiftUI
- 
-•	Veritabanı ve Kimlik Doğrulama: Firebase
+## Mobil Uygulama:
+• Geliştirme Ortamı: Xcode
+
+• Programlama Dili: Swift
+
+• Çerçeve: SwiftUI
+
+## Backend:
+
+• Programlama Dili: Python
+
+• Framework: Flask
+
+• Araç: Ngrok
+
+• Model: YOLOv9 (Kendi çektiğimiz ve etiketlediğimiz 40 farklı ürünün fotoğraflarından oluşan veri seti ile eğitildi)
+
+• Ek Model: OpenAI Language Learning Model (LLM)
+
+## Veritabanı ve Kimlik Doğrulama:
+
+• Firebase
+
+## Etiketleme ve Model Eğitimi:
+
+• Araç: Roboflow
  
 
 ## Kullanım
