@@ -60,7 +60,7 @@ struct ScanView: View {
                     .foregroundStyle(Color.tundora)
                 
                 Spacer()
-                    .frame(height: 100)
+                    .frame(height: 50)
                 HStack{
                     Image(systemName: "clock.arrow.circlepath")
                         .resizable()

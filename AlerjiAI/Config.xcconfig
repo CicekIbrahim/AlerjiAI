@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  AlerjiAI
+//
+//  Created by Ibrahim Cicek on 6.06.2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Server URL
+BASE_URL = https:/$()/a930-78-177-157-105.ngrok-free.app //Your Ngrok Link Here
+

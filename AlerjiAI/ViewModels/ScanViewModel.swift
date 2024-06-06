@@ -27,7 +27,7 @@ class ScanViewModel: BaseViewModel {
         
         guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
         
-        let url = "https://5hdf4m1l-5000.euw.devtunnels.ms/detect"
+        let url = "\(Constants.Networking.baseURL)/detect"
         let headers: HTTPHeaders = [
             "Content-type": "multipart/form-data"
         ]
@@ -48,6 +48,7 @@ class ScanViewModel: BaseViewModel {
                                         self.showError(error)
                                         return
                                     }
+                                    self.getScans()
                                     self.lastScans?.append(scan)
                                 }
                             }
@@ -88,7 +89,7 @@ class ScanViewModel: BaseViewModel {
     }
     
     private func checkAllergens(in product: Product, completion: @escaping () -> Void) {
-           if let user {
+           if let user = LocalStorage.shared.getUser() {
                var coughtAllergens: [String] = []
                
                if let ingredients = product.ingredients {

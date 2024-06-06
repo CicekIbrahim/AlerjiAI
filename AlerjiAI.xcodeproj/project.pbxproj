@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423CD2E92C119B4000EF4B62 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 423CD2E82C119B4000EF4B62 /* Config.xcconfig */; };
+		423CD2EB2C119C4E00EF4B62 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423CD2EA2C119C4E00EF4B62 /* Enviroment.swift */; };
+		423CD2ED2C119D0200EF4B62 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423CD2EC2C119D0200EF4B62 /* Constant.swift */; };
 		426B6B102C0C6C5C001AD324 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B6B0F2C0C6C5C001AD324 /* ViewExt.swift */; };
 		426B6B122C0C6FD1001AD324 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426B6B112C0C6FD1001AD324 /* ForgotPasswordView.swift */; };
 		4270D4FA2BE6B61A00CA34C0 /* AlerjiAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4270D4F92BE6B61A00CA34C0 /* AlerjiAIApp.swift */; };
@@ -83,6 +86,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		423CD2E82C119B4000EF4B62 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		423CD2EA2C119C4E00EF4B62 /* Enviroment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		423CD2EC2C119D0200EF4B62 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		426B6B0F2C0C6C5C001AD324 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		426B6B112C0C6FD1001AD324 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		4270D4F62BE6B61A00CA34C0 /* AlerjiAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlerjiAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +209,7 @@
 				4270D50D2BE6BE1C00CA34C0 /* Colors.xcassets */,
 				4270D4FD2BE6B61C00CA34C0 /* Assets.xcassets */,
 				4270D5322BE77E3E00CA34C0 /* GoogleService-Info.plist */,
+				423CD2E82C119B4000EF4B62 /* Config.xcconfig */,
 			);
 			path = AlerjiAI;
 			sourceTree = "<group>";
@@ -283,7 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				4270D5B92BE7C11100CA34C0 /* KeychainItemAccessibility.swift */,
+				423CD2EA2C119C4E00EF4B62 /* Enviroment.swift */,
 				4270D5BA2BE7C11100CA34C0 /* KeychainWrapper.swift */,
+				423CD2EC2C119D0200EF4B62 /* Constant.swift */,
 				4270D5BD2BE7C14A00CA34C0 /* LocalStorage.swift */,
 			);
 			path = Utilities;
@@ -418,6 +427,7 @@
 				4270D5332BE77E3E00CA34C0 /* GoogleService-Info.plist in Resources */,
 				4270D5AF2BE7AD8B00CA34C0 /* Poppins-ThinItalic.ttf in Resources */,
 				4270D5A72BE7AD8B00CA34C0 /* Poppins-Italic.ttf in Resources */,
+				423CD2E92C119B4000EF4B62 /* Config.xcconfig in Resources */,
 				4270D5A92BE7AD8B00CA34C0 /* Poppins-Regular.ttf in Resources */,
 				4270D5AC2BE7AD8B00CA34C0 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				4270D5A02BE7AD8B00CA34C0 /* Poppins-BlackItalic.ttf in Resources */,
@@ -452,10 +462,12 @@
 				4270D5652BE7958900CA34C0 /* InputView.swift in Sources */,
 				4270D5C12BE7C7BA00CA34C0 /* UserModel.swift in Sources */,
 				426B6B102C0C6C5C001AD324 /* ViewExt.swift in Sources */,
+				423CD2ED2C119D0200EF4B62 /* Constant.swift in Sources */,
 				4270D5082BE6BADC00CA34C0 /* ScanView.swift in Sources */,
 				4270D5BC2BE7C11100CA34C0 /* KeychainWrapper.swift in Sources */,
 				4270D5BE2BE7C14A00CA34C0 /* LocalStorage.swift in Sources */,
 				4270D5602BE78FEE00CA34C0 /* FontExt.swift in Sources */,
+				423CD2EB2C119C4E00EF4B62 /* Enviroment.swift in Sources */,
 				42BE39AD2C08A82100BD959A /* StringExt.swift in Sources */,
 				426B6B122C0C6FD1001AD324 /* ForgotPasswordView.swift in Sources */,
 				42A784162C04423F00BFDF88 /* Product.swift in Sources */,
@@ -471,6 +483,7 @@
 /* Begin XCBuildConfiguration section */
 		4270D5022BE6B61C00CA34C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 423CD2E82C119B4000EF4B62 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -534,6 +547,7 @@
 		};
 		4270D5032BE6B61C00CA34C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 423CD2E82C119B4000EF4B62 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -590,26 +604,30 @@
 		};
 		4270D5052BE6B61C00CA34C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 423CD2E82C119B4000EF4B62 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S6YPUUBVTT;
+				DEVELOPMENT_TEAM = X9336X83L3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AlerjiAI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Taratma yapabilmek için";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cicekibrahim.AlerjiAI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cicekibrahim.alerjiai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -619,26 +637,30 @@
 		};
 		4270D5062BE6B61C00CA34C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 423CD2E82C119B4000EF4B62 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = S6YPUUBVTT;
+				DEVELOPMENT_TEAM = X9336X83L3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AlerjiAI/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Taratma yapabilmek için";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cicekibrahim.AlerjiAI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cicekibrahim.alerjiai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
